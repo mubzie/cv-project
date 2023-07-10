@@ -52,8 +52,10 @@ class WorkExperience extends Component {
                 <form>
                     <input type="text" placeholder="Company" id="nameInput" onChange={this.handleCompany} value={this.state.company}></input>
                     <input type="text" placeholder="Role" id="occupationInput" onChange={this.handleRole} value={this.state.role}></input>
-                    <input type="date" placeholder="Start Date" id="phoneInput" onChange={this.handleStartDate} value={this.state.startDate}></input>
-                    <input type="date" placeholder="End Date" id="emailInput" onChange={this.handleEndDate} value={this.state.endDate}></input>
+                    <label htmlFor="startDateInput">Start Date</label>
+                    <input type="date" placeholder="Start Date" id="startDateInput" onChange={this.handleStartDate} value={this.state.startDate}></input>
+                    <label htmlFor="endDateInput">End Date</label>
+                    <input type="date" placeholder="End Date" id="endDateInput" onChange={this.handleEndDate} value={this.state.endDate}></input>
                 </form>
 
                 <div className="form-btns">
