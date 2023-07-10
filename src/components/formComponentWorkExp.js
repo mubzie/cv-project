@@ -45,6 +45,7 @@ class WorkExperience extends Component {
 
     render() {
         const { formTitle } = this.props
+        
         return(
             <div className="form-container">
                 <div className="form-title">{ formTitle }</div>

@@ -54,7 +54,7 @@ class PersonalDetails extends Component {
         const { formTitle } = this.props
 
         return(
-            <div>
+            <div className="form-container">
                 <div>{ formTitle }</div>
 
             <form>
