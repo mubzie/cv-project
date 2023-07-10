@@ -15,7 +15,7 @@ class App extends Component {
         return(
             <div>
                 <Navbar title="CV - Kreator"/>
-                <PersonalDetails />
+                <PersonalDetails formTitle='personal Details' />
             </div>
         )
     }

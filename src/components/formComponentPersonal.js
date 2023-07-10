@@ -51,15 +51,20 @@ class PersonalDetails extends Component {
     }
 
     render() {
+        const { formTitle } = this.props
+
         return(
+            <div>
+                <div>{ formTitle }</div>
+
             <form>
-                <label htmlFor="taskInput">Enter input</label>
-                <input type="text" id="taskInput" onChange={this.handleFullName} value={this.state.fullName}></input>
-                <input type="text" id="taskInput" onChange={this.handleOccupation} value={this.state.occupation}></input>
-                <input type="text" id="taskInput" onChange={this.handlePhone} value={this.state.phone}></input>
-                <input type="text" id="taskInput" onChange={this.handleEmail} value={this.state.email}></input>
-                <input type="text" id="taskInput" onChange={this.handleAddress} value={this.state.address}></input>
+                <input type="text" placeholder="Full Name" id="nameInput" onChange={this.handleFullName} value={this.state.fullName}></input>
+                <input type="text" placeholder="Occupation" id="occupationInput" onChange={this.handleOccupation} value={this.state.occupation}></input>
+                <input type="text" placeholder="Phone Number" id="phoneInput" onChange={this.handlePhone} value={this.state.phone}></input>
+                <input type="text" placeholder="Email" id="emailInput" onChange={this.handleEmail} value={this.state.email}></input>
+                <input type="text" placeholder="Address" id="addressInput" onChange={this.handleAddress} value={this.state.address}></input>
             </form>
+            </div>
         )
     }
 }
