@@ -5,58 +5,23 @@ class Education extends Component {
     constructor(props) {
         super(props)
 
-        this.state  = {
-            university: 'University of Lagos',
-            degree: 'Software Engineering',
-            startDate: "2023-07-10",
-            completionDate: "2023-07-10",
-        }
-
-        this.handleUniversity = this.handleUniversity.bind(this)
-        this.handleDegree = this.handleDegree.bind(this)
-        this.handleStartDate = this.handleStartDate.bind(this)
-        this.handleCompletionDate = this.handleCompletionDate.bind(this)
-
     }
 
-    handleUniversity(e) {
-        this.setState({
-            university: e.target.value
-        })
-    }
-
-    handleDegree(e) {
-        this.setState({
-            degree: e.target.value
-        })
-    }
-
-    handleStartDate(e) {
-        this.setState({
-            startDate: e.target.value
-        })
-    }
-
-    handleCompletionDate(e) {
-        this.setState({
-            completionDate: e.target.value
-        })
-    }
 
     render() {
-        const { formTitle } = this.props
+        const { formTitle, handleDataChange, data } = this.props
 
         return(
             <div className="form-container">
                 <div className="form-title">{ formTitle }</div>
 
                 <form>
-                    <input type="text" placeholder="UUniversity/College" id="uniInput" onChange={this.handleUniversity} value={this.state.university}></input>
-                    <input type="text" placeholder="Role" id="degreeInput" onChange={this.handleDegree} value={this.state.degree}></input>
+                    <input type="text" placeholder="UUniversity/College" id="uniInput" onChange={ handleDataChange } value={ data.university }></input>
+                    <input type="text" placeholder="Role" id="degreeInput" onChange={ handleDataChange } value={ data.degree }></input>
                     <label htmlFor="startDateInput">Start Date</label>
-                    <input type="date" placeholder="Start Date" id="startDateInput" onChange={this.handleStartDate} value={this.state.startDate}></input>
+                    <input type="date" placeholder="Start Date" id="startDateInput" onChange={ handleDataChange } value={ data.startDate }></input>
                     <label htmlFor="completionDateInput">completion Date</label>
-                    <input type="date" placeholder="Completion Date" id="completionDateInput" onChange={this.handleCompletionDate} value={this.state.completionDate}></input>
+                    <input type="date" placeholder="Completion Date" id="completionDateInput" onChange={ handleDataChange } value={ data.completionDate }></input>
                 </form>
 
                 <div className="form-btns">
