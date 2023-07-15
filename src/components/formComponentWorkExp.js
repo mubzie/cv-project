@@ -32,7 +32,6 @@ class WorkExperience extends Component {
         }))
     }
 
-
     render() {
         const { formTitle, workExperience } = this.state;
         

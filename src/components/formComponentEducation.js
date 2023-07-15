@@ -50,8 +50,8 @@ class Education extends Component {
                 </form>
 
                 <div className="form-btns">
-                    <button className="delete-btn">delete</button>
-                    <button className="add-new-btn">add new Education</button>
+                    <button className="delete-btn" id="del-btn" >delete</button>
+                    <button className="add-new-btn" id="add-btn">add new Education</button>
                 </div>
 
             </div>
