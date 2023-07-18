@@ -11,7 +11,8 @@ class PersonalDetails extends Component {
                 occupation: 'Software Engineer',
                 phone: '+2348154356599',
                 email: 'rabiumubarak92@gmail.com',
-                address: 'Lagos Nigeria'
+                address: 'Lagos Nigeria',
+                profile: 'I am a software Engineer working for google'
             }
         }
 
@@ -47,6 +48,7 @@ class PersonalDetails extends Component {
                 <input type="text" placeholder="Phone Number" name="phone" id="phoneInput" onChange={ this.handleChange } value={ personal.phone }></input>
                 <input type="text" placeholder="Email" name="email" id="emailInput" onChange={ this.handleChange } value={ personal.email }></input>
                 <input type="text" placeholder="Address" name="address" id="addressInput" onChange={ this.handleChange } value={ personal.address }></input>
+                <textarea rows="5" cols="30" placeholder="write short information about yourself" name="profile" id="profileInput" onChange={ this.handleChange } value={ personal.profile }></textarea>
             </form>
 
             </div>
