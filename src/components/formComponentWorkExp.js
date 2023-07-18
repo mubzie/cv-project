@@ -56,12 +56,14 @@ class WorkExperience extends Component {
         console.log(e.target)
 
         this.setState({
-            educationArr: this.state.educationArr.pop()
+            workExperienceArr: this.state.workExperienceArr.slice(0, -1)
         })
     }
 
     render() {
-        const { formTitle, workExperience } = this.state;
+        const { workExperience } = this.state;
+        const { formTitle } = this.props
+
         
         return(
             <div className="form-container">
@@ -74,12 +76,12 @@ class WorkExperience extends Component {
                     <input type="date" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ workExperience.startDate }></input>
                     <label htmlFor="endDateInput">End Date</label>
                     <input type="date" placeholder="End Date" name="endDate" id="endDateInput" onChange={ this.handleChange } value={ workExperience.endDate }></input>
-                    <div className="form-btns">
-                        <button className="delete-btn" onClick={ this.deleteWorkExperience }>delete</button>
-                        <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button>
-                    </div>
                 </form>
 
+                <div className="form-btns">
+                    <button className="delete-btn" onClick={ this.deleteWorkExperience }>delete</button>
+                    <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button>
+                </div>
 
             </div>
         )

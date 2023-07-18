@@ -34,7 +34,8 @@ class PersonalDetails extends Component {
 
 
     render() {
-        const { formTitle, personal } = this.state;
+        const { personal } = this.state;
+        const { formTitle } = this.props
 
         return(
             <div className="form-container">

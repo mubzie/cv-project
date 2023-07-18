@@ -56,13 +56,14 @@ class Education extends Component {
         console.log(e.target)
 
         this.setState({
-            educationArr: this.state.educationArr.pop()
+            educationArr: this.state.educationArr.slice(0, -1)
         })
     }
 
 
     render() {
-        const { formTitle, education } = this.state
+        const { education } = this.state
+        const { formTitle } = this.props
 
         return(
             <div className="form-container">
@@ -75,12 +76,12 @@ class Education extends Component {
                     <input type="date" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ education.startDate }></input>
                     <label htmlFor="completionDateInput">completion Date</label>
                     <input type="date" placeholder="Completion Date" name="completionDate" id="completionDateInput" onChange={ this.handleChange } value={ education.completionDate }></input>
-                    <div className="form-btns">
-                        <button className="delete-btn" id="del-btn" onClick={ this.deleteEducation } >delete</button>
-                        <button className="add-new-btn" id="add-btn" onClick={ this.addEducation } >add new Education</button>
-                    </div>
                 </form>
 
+                <div className="form-btns">
+                    <button className="delete-btn" id="del-btn" onClick={ this.deleteEducation } >delete</button>
+                    <button className="add-new-btn" id="add-btn" onClick={ this.addEducation } >add new Education</button>
+                </div>
 
             </div>
         )
