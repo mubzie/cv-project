@@ -12,10 +12,13 @@ class WorkExperience extends Component {
                 startDate: "2023-07-10",
                 endDate: "2023-07-10",
             },
+            workExperienceArr: []
 
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.addWorkExperience = this.addWorkExperience.bind(this)
+        this.deleteWorkExperience = this.deleteWorkExperience.bind(this)
 
     }
 
@@ -32,6 +35,31 @@ class WorkExperience extends Component {
         }))
     }
 
+    addWorkExperience(e) {
+        e.preventDefault()
+        
+        console.log('this')
+        let newWorkExperience = {
+            company: 'Google',
+            role: 'Software Engineer',
+            startDate: "2023-07-10",
+            endDate: "2023-07-10",
+        }
+
+        this.setState({
+            workExperienceArr: this.state.workExperienceArr.concat(newWorkExperience)
+        })
+    }
+
+    deleteWorkExperience(e) {
+        e.preventDefault()
+        console.log(e.target)
+
+        this.setState({
+            educationArr: this.state.educationArr.pop()
+        })
+    }
+
     render() {
         const { formTitle, workExperience } = this.state;
         
@@ -46,12 +74,12 @@ class WorkExperience extends Component {
                     <input type="date" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ workExperience.startDate }></input>
                     <label htmlFor="endDateInput">End Date</label>
                     <input type="date" placeholder="End Date" name="endDate" id="endDateInput" onChange={ this.handleChange } value={ workExperience.endDate }></input>
+                    <div className="form-btns">
+                        <button className="delete-btn" onClick={ this.deleteWorkExperience }>delete</button>
+                        <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button>
+                    </div>
                 </form>
 
-                <div className="form-btns">
-                    <button className="delete-btn">delete</button>
-                    <button className="add-new-btn">add new Experience</button>
-                </div>
 
             </div>
         )
