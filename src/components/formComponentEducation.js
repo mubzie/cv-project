@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import uniqid from 'uniqid'
+import NewEducation from "./newEducation"
 
 class Education extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class Education extends Component {
                 completionDate: "2023-07-10",
                 id: uniqid()
             },
-            educationArr: []
+            educationArrs: []
 
         }
 
@@ -32,6 +33,10 @@ class Education extends Component {
                 ...prevState.education,
                 [name]: value,
 
+            },
+            educationArrs: {
+                ...prevState.educationArrs,
+                [name]: value,
             }
             
         }))
@@ -50,7 +55,7 @@ class Education extends Component {
         }
 
         this.setState({
-            educationArr: this.state.educationArr.concat(newEducation)
+            educationArrs: this.state.educationArrs.concat(newEducation)
         })
     }
 
@@ -59,13 +64,13 @@ class Education extends Component {
         console.log(e.target)
 
         this.setState({
-            educationArr: this.state.educationArr.slice(0, -1)
+            educationArrs: this.state.educationArrs.slice(0, -1)
         })
     }
 
 
     render() {
-        const { education } = this.state
+        const { education, educationArrs } = this.state
         const { formTitle } = this.props
 
         return(
@@ -73,13 +78,15 @@ class Education extends Component {
                 <div className="form-title">{ formTitle }</div>
 
                 <form>
-                    <input type="text" placeholder="UUniversity/College" name="university" id="uniInput" onChange={ this.handleChange } value={ education.university }></input>
-                    <input type="text" placeholder="Role" name="degree" id="degreeInput" onChange={ this.handleChange } value={ education.degree }></input>
+                    <input type="text" placeholder="University/College" name="university" id="uniInput" onChange={ this.handleChange } value={ education.university }></input>
+                    <input type="text" placeholder="Degree" name="degree" id="degreeInput" onChange={ this.handleChange } value={ education.degree }></input>
                     <label htmlFor="startDateInput">Start Date</label>
-                    <input type="date" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ education.startDate }></input>
+                    <input type="date" placeholder="Start Date" name="start-date" id="startDateInput" onChange={ this.handleChange } value={ education.startDate }></input>
                     <label htmlFor="completionDateInput">completion Date</label>
-                    <input type="date" placeholder="Completion Date" name="completionDate" id="completionDateInput" onChange={ this.handleChange } value={ education.completionDate }></input>
+                    <input type="date" placeholder="Completion Date" name="completion-date" id="completionDateInput" onChange={ this.handleChange } value={ education.completionDate }></input>
                 </form>
+
+                <NewEducation educationArrs={ educationArrs } handleChange={ this.handleChange }/>
 
                 <div className="form-btns">
                     <button className="delete-btn" id="del-btn" onClick={ this.deleteEducation } >delete</button>
