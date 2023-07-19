@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import uniqid from 'uniqid'
 
 class WorkExperience extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class WorkExperience extends Component {
                 role: 'Software Engineer',
                 startDate: "2023-07-10",
                 endDate: "2023-07-10",
+                id: uniqid()
             },
             workExperienceArr: []
 
@@ -44,6 +46,7 @@ class WorkExperience extends Component {
             role: 'Software Engineer',
             startDate: "2023-07-10",
             endDate: "2023-07-10",
+            id: uniqid()
         }
 
         this.setState({

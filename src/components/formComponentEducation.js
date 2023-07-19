@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import uniqid from 'uniqid'
 
 class Education extends Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class Education extends Component {
                 degree: 'Software Engineering',
                 startDate: "2023-07-10",
                 completionDate: "2023-07-10",
+                id: uniqid()
             },
             educationArr: []
 
@@ -44,6 +46,7 @@ class Education extends Component {
             degree: 'Software Engineering',
             startDate: "2023-07-10",
             completionDate: "2023-07-10",
+            id: uniqid()
         }
 
         this.setState({
