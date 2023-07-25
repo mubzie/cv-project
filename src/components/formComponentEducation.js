@@ -56,6 +56,8 @@ class Education extends Component {
             }
         })
 
+        this.props.addEducation(this.state.education)
+
     }
 
     deleteEducation(e) {
@@ -65,6 +67,8 @@ class Education extends Component {
         this.setState({
             educations: this.state.educations.slice(0, -1)
         })
+
+        this.props.deleteEducation(0, -1)
     }
 
 

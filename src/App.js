@@ -27,6 +27,8 @@ class App extends Component {
 
         this.addWorkExperience = this.addWorkExperience.bind(this)
         this.deleteWorkExperience = this.deleteWorkExperience.bind(this)
+        this.addEducation = this.addEducation.bind(this)
+        this.deleteEducation = this.deleteEducation.bind(this)
 
     }
 
@@ -36,11 +38,25 @@ class App extends Component {
             workExperienceArr: this.state.workExperienceArr.concat(obj)
         })
     }
-
+    
     deleteWorkExperience(i, count) {
         
         this.setState({
             workExperienceArr: this.state.workExperienceArr.slice(i, count)
+        })
+    }
+    
+    addEducation(obj) {
+
+        this.setState({
+            educationArr: this.state.educationArr.concat(obj)
+        })
+    }
+    
+    deleteEducation(i, count) {
+
+        this.setState({
+            educationArr: this.state.educationArr.slice(i, count)
         })
     }
 
@@ -52,7 +68,7 @@ class App extends Component {
                 <Navbar title="CV - Kreator"/>
                 {/* <PersonalDetails formTitle='Personal Details' /> */}
                 <WorkExperience formTitle='Work Experience' addWorkExperience={ this.addWorkExperience } deleteWorkExperience={ this.deleteWorkExperience } />
-                <Education formTitle='Education' />
+                <Education formTitle='Education' addEducation={ this.addEducation } deleteEducation={ this.deleteEducation } />
                 
             </div>
         )
