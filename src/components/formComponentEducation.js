@@ -77,7 +77,7 @@ class Education extends Component {
         const { formTitle } = this.props
 
         return(
-            <div className="form-container">
+            <div className="form-container-education">
                 <div className="form-title">{ formTitle }</div>
 
                 <form onSubmit={ this.onSubmitEducation }>

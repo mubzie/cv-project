@@ -5,6 +5,7 @@ import PersonalDetails from "./components/formComponentPersonal";
 import WorkExperience from "./components/formComponentWorkExp";
 import Education from "./components/formComponentEducation";
 import Preview from "./components/preview";
+import './styles/App.css'
 
 
 class App extends Component {
@@ -101,16 +102,26 @@ class App extends Component {
         const { personal, educationArr, workExperienceArr } = this.state
 
         return(
-            <div>
-                <Navbar title="CV - Kreator"/>
+            <>
+                <div className="header">
+                    <Navbar title="CV - Kreator"/>
 
-                <PersonalDetails formTitle='Personal Details' personal={ personal } handleChange={ this.handleChange } saveButton={ this.onSubmitButton} clearButton={ this.onClearButton }/>
-                <WorkExperience formTitle='Work Experience' addWorkExperience={ this.addWorkExperience } deleteWorkExperience={ this.deleteWorkExperience } />
-                <Education formTitle='Education' addEducation={ this.addEducation } deleteEducation={ this.deleteEducation } />
+                </div>
 
-                <Preview personal={ personal } workExperienceArr={ workExperienceArr } educationArr={ educationArr } />
-                
-            </div>
+                <div className="main">
+                    <div className="form-container">
+                        <PersonalDetails formTitle='Personal Details' personal={ personal } handleChange={ this.handleChange } saveButton={ this.onSubmitButton} clearButton={ this.onClearButton }/>
+                        <WorkExperience formTitle='Work Experience' addWorkExperience={ this.addWorkExperience } deleteWorkExperience={ this.deleteWorkExperience } />
+                        <Education formTitle='Education' addEducation={ this.addEducation } deleteEducation={ this.deleteEducation } />
+                    </div>
+
+                    <div className="preview">
+                        <Preview personal={ personal } workExperienceArr={ workExperienceArr } educationArr={ educationArr } />
+
+                    </div>
+
+                </div>
+            </>
         )
     }
 }

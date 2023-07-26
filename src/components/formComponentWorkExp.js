@@ -78,7 +78,7 @@ class WorkExperience extends Component {
 
         
         return(
-            <div className="form-container">
+            <div className="form-container-workexp">
                 <div className="form-title">{ formTitle }</div>
 
                 <form onSubmit={ this.onSubmitExperience }>
