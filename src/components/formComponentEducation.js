@@ -73,7 +73,7 @@ class Education extends Component {
 
 
     render() {
-        const { education, educations } = this.state
+        const { education } = this.state
         const { formTitle } = this.props
 
         return(
@@ -99,10 +99,10 @@ class Education extends Component {
                     {/* <button className="add-new-btn" id="add-btn" onClick={ this.addEducation } >add new Education</button> */}
                 </div>
 
-                <div className="education-list">
+                {/* <div className="education-list">
                     <DisplayEducation educations={educations} />
 
-                </div>
+                </div> */}
 
 
 

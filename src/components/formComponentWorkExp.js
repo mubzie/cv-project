@@ -73,7 +73,7 @@ class WorkExperience extends Component {
     }
 
     render() {
-        const { workExperience, workExperiences } = this.state;
+        const { workExperience } = this.state;
         const { formTitle } = this.props
 
         
@@ -100,9 +100,9 @@ class WorkExperience extends Component {
                     {/* <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button> */}
                 </div>
                 
-                <div className="workExperience-list">
+                {/* <div className="workExperience-list">
                     <DisplayWorkExp workExperiences={workExperiences} />
-                </div>
+                </div> */}
 
 
             </div>
