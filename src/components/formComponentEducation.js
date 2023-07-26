@@ -99,13 +99,6 @@ class Education extends Component {
                     {/* <button className="add-new-btn" id="add-btn" onClick={ this.addEducation } >add new Education</button> */}
                 </div>
 
-                {/* <div className="education-list">
-                    <DisplayEducation educations={educations} />
-
-                </div> */}
-
-
-
             </div>
         )
     }

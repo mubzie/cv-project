@@ -5,51 +5,29 @@ class PersonalDetails extends Component {
     constructor (props) {
         super(props)
 
-        this.state = {
-            personal: {
-                fullName: 'Mubarak Rabiu',
-                occupation: 'Software Engineer',
-                phone: '+2348154356599',
-                email: 'rabiumubarak92@gmail.com',
-                address: 'Lagos Nigeria',
-                profile: 'I am a software Engineer working for google'
-            }
-        }
-
-        this.handleChange = this.handleChange.bind(this)
-
-    }
-
-    handleChange(e) {
-        const { name, value } = e.target
-
-        this.setState( prevState => ({
-            personal: {
-                ...prevState.personal,
-                [name]: value,
-
-            }
-            
-        }))
     }
 
 
     render() {
-        const { personal } = this.state;
-        const { formTitle } = this.props
+        const { formTitle, personal, handleChange, saveButton, clearButton } = this.props
 
         return(
             <div className="form-container">
                 <div>{ formTitle }</div>
 
-            <form>
-                <input type="text" placeholder="Full Name" name="fullName" id="nameInput" onChange={ this.handleChange } value={ personal.fullName }></input>
-                <input type="text" placeholder="Occupation" name="occupation" id="occupationInput" onChange={ this.handleChange } value={ personal.occupation }></input>
-                <input type="text" placeholder="Phone Number" name="phone" id="phoneInput" onChange={ this.handleChange } value={ personal.phone }></input>
-                <input type="text" placeholder="Email" name="email" id="emailInput" onChange={ this.handleChange } value={ personal.email }></input>
-                <input type="text" placeholder="Address" name="address" id="addressInput" onChange={ this.handleChange } value={ personal.address }></input>
-                <textarea rows="5" cols="30" placeholder="write short information about yourself" name="profile" id="profileInput" onChange={ this.handleChange } value={ personal.profile }></textarea>
-            </form>
+                <form>
+                    <input type="text" placeholder="Full Name" name="fullName" id="nameInput" onChange={ handleChange } value={ personal.fullName }></input>
+                    <input type="text" placeholder="Occupation" name="occupation" id="occupationInput" onChange={ handleChange } value={ personal.occupation }></input>
+                    <input type="text" placeholder="Phone Number" name="phone" id="phoneInput" onChange={ handleChange } value={ personal.phone }></input>
+                    <input type="text" placeholder="Email" name="email" id="emailInput" onChange={ handleChange } value={ personal.email }></input>
+                    <input type="text" placeholder="Address" name="address" id="addressInput" onChange={ handleChange } value={ personal.address }></input>
+                    <textarea rows="5" cols="30" placeholder="write short information about yourself" name="profile" id="profileInput" onChange={ handleChange } value={ personal.profile }></textarea>
+                </form>
+
+                <div className="form-btns">
+                    <button className="save-btn" onClick={ saveButton }>save</button>
+                    <button className="delete-btn" onClick={ clearButton }>clear</button>
+                </div>
 
             </div>
         )

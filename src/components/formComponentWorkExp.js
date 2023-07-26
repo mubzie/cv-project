@@ -99,11 +99,6 @@ class WorkExperience extends Component {
                     <button className="delete-btn" onClick={ this.deleteWorkExperience }>delete</button>
                     {/* <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button> */}
                 </div>
-                
-                {/* <div className="workExperience-list">
-                    <DisplayWorkExp workExperiences={workExperiences} />
-                </div> */}
-
 
             </div>
         )

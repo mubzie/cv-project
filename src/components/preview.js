@@ -7,7 +7,7 @@ class Preview extends Component {
     }
 
     render() {
-        const { personal, educationArr, workExperienceArr } = this.props;
+        const { personal, workExperienceArr, educationArr } = this.props;
 
         return(
             <div>
@@ -22,22 +22,6 @@ class Preview extends Component {
                     
                 </div>
                 
-                <div className="container-education">
-                    {educationArr.map(education => {
-                        return <div className="education" id={education.id} key={education.id}>
-                            <div className="university" > {education.university }</div>
-                            <div className="degree" > {education.degree }</div>
-                            <div className="start-date" > {education.startDate }</div>
-                            <div className="end" > {education.endDate }</div>
-                            <div className="city" > {education.city }</div>
-                            <div className="country" > {education.country }</div>
-                        </div>
-
-                    })
-
-                    }
-                </div>
-
                 <div className="container-work-experience">
                     {workExperienceArr.map(workExperience => {
                         return <div className="work-experience" id={workExperience.id} key={workExperience.id}>
@@ -47,6 +31,22 @@ class Preview extends Component {
                             <div className="end" > {workExperience.endDate }</div>
                             <div className="city" > {workExperience.city }</div>
                             <div className="country" > {workExperience.country }</div>
+                        </div>
+
+                    })
+
+                    }
+                </div>
+
+                <div className="container-education">
+                    {educationArr.map(education => {
+                        return <div className="education" id={education.id} key={education.id}>
+                            <div className="university" > {education.university }</div>
+                            <div className="degree" > {education.degree }</div>
+                            <div className="start-date" > {education.startDate }</div>
+                            <div className="end" > {education.endDate }</div>
+                            <div className="city" > {education.city }</div>
+                            <div className="country" > {education.country }</div>
                         </div>
 
                     })
