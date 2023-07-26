@@ -84,14 +84,34 @@ class WorkExperience extends Component {
                 <form onSubmit={ this.onSubmitExperience }>
                     <input type="text" placeholder="Company" name="company" id="nameInput" onChange={ this.handleChange } value={ workExperience.company }></input>
                     <input type="text" placeholder="Role" name="role" id="occupationInput" onChange={ this.handleChange } value={ workExperience.role }></input>
-                    <label htmlFor="startDateInput">start Date</label>
-                    <input type="text" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ workExperience.startDate }></input>
-                    <label htmlFor="endDateInput">end Date</label>
-                    <input type="text" placeholder="End Date" name="endDate" id="endDateInput" onChange={ this.handleChange } value={ workExperience.endDate }></input>
-                    <label htmlFor="startDateInput">city</label>
-                    <input type="text" placeholder="city" name="city" id="cityInput" onChange={ this.handleChange } value={ workExperience.city }></input>
-                    <label htmlFor="endDateInput">country</label>
-                    <input type="text" placeholder="country" name="country" id="countryInput" onChange={ this.handleChange } value={ workExperience.country }></input>
+                    
+                    <div className="info-container">
+                        <div className="info-title">
+                            <label htmlFor="startDateInput">start Date</label>
+                            <input type="text" placeholder="Start Date" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ workExperience.startDate }></input>
+
+                        </div>
+                        <div className="info-title">
+                            <label htmlFor="endDateInput">end Date</label>
+                            <input type="text" placeholder="End Date" name="endDate" id="endDateInput" onChange={ this.handleChange } value={ workExperience.endDate }></input>
+
+                        </div>
+
+                    </div>
+
+                    <div className="info-container">
+                        <div className="info-title">
+                            <label htmlFor="startDateInput">city</label>
+                            <input type="text" placeholder="city" name="city" id="cityInput" onChange={ this.handleChange } value={ workExperience.city }></input>
+
+                        </div>
+                        <div className="info-title">
+                            <label htmlFor="endDateInput">country</label>
+                            <input type="text" placeholder="country" name="country" id="countryInput" onChange={ this.handleChange } value={ workExperience.country }></input>
+
+                        </div>
+
+                    </div>
                 </form>
 
                 <div className="form-btns">

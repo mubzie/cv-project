@@ -83,14 +83,34 @@ class Education extends Component {
                 <form onSubmit={ this.onSubmitEducation }>
                     <input type="text" placeholder="University/College" name="university" id="uniInput" onChange={ this.handleChange } value={ education.university }></input>
                     <input type="text" placeholder="Degree" name="degree" id="degreeInput" onChange={ this.handleChange } value={ education.degree }></input>
-                    <label htmlFor="startDateInput">start Date</label>
-                    <input type="text" placeholder="20/07/2018" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ education.startDate }></input>
-                    <label htmlFor="completionDateInput">completion Date</label>
-                    <input type="text" placeholder="20/07/2020" name="completionDate" id="completionDateInput" onChange={ this.handleChange } value={ education.completionDate }></input>
-                    <label htmlFor="startDateInput">city</label>
-                    <input type="text" placeholder="Lagos" name="city" id="ciyuInput" onChange={ this.handleChange } value={ education.city }></input>
-                    <label htmlFor="completionDateInput">country</label>
-                    <input type="text" placeholder="Nigeria" name="country" id="countryInput" onChange={ this.handleChange } value={ education.country }></input>
+                    
+                    <div className="info-container">
+                        <div className="info-title">
+                            <label htmlFor="startDateInput">start date</label>
+                            <input type="text" placeholder="20/07/2018" name="startDate" id="startDateInput" onChange={ this.handleChange } value={ education.startDate }></input>
+
+                        </div>
+                        <div className="info-title">
+                            <label htmlFor="completionDateInput">completion date</label>
+                            <input type="text" placeholder="20/07/2020" name="completionDate" id="completionDateInput" onChange={ this.handleChange } value={ education.completionDate }></input>
+
+                        </div>
+
+                    </div>
+
+                    <div className="info-container">
+                        <div className="info-title">
+                            <label htmlFor="startDateInput">city</label>
+                            <input type="text" placeholder="Lagos" name="city" id="ciyuInput" onChange={ this.handleChange } value={ education.city }></input>
+
+                        </div>
+                        <div className="info-title">
+                            <label htmlFor="completionDateInput">country</label>
+                            <input type="text" placeholder="Nigeria" name="country" id="countryInput" onChange={ this.handleChange } value={ education.country }></input>
+
+                        </div>
+
+                    </div>
                 </form>
 
                 <div className="form-btns">
