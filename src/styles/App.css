@@ -62,11 +62,22 @@ body {
     gap: var(--spacing-medium);
 }
 
-.form-title {
+.form-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 8px;
     font-size: var(--font-size-small);
     font-weight: 500;
     margin-bottom: 16px;
+    cursor: pointer;
+}
+
+div.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
 }
 
 form {

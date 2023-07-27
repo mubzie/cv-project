@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import { HiOutlineChevronRight } from "react-icons/hi"
 
 class PersonalDetails extends Component {
     constructor (props) {
@@ -13,7 +14,11 @@ class PersonalDetails extends Component {
 
         return(
             <div className="form-container-personal">
-                <div className="form-title">{ formTitle }</div>
+                <div className="form-header-container">
+                    <div className="form-title">{ formTitle }</div>
+                    <div className="icon"><HiOutlineChevronRight /></div>
+
+                </div>
 
                 <form>
                     <input type="text" placeholder="Full Name" name="fullName" id="nameInput" onChange={ handleChange } value={ personal.fullName }></input>

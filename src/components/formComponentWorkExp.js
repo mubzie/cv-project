@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import uniqid from 'uniqid'
+import { HiOutlineChevronRight } from "react-icons/hi"
 import DisplayWorkExp from "./displayWorkExp";
 
 class WorkExperience extends Component {
@@ -95,7 +96,11 @@ class WorkExperience extends Component {
         
         return(
             <div className="form-container-workexp">
-                <div className="form-title">{ formTitle }</div>
+                <div className="form-header-container">
+                    <div className="form-title">{ formTitle }</div>
+                    <div className="icon"><HiOutlineChevronRight /></div>
+
+                </div>
 
                 <form onSubmit={ this.onSubmitExperience }>
                     <input type="text" placeholder="Company" name="company" id="nameInput" onChange={ this.handleChange } value={ workExperience.company }></input>

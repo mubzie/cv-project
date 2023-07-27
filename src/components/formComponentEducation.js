@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import uniqid from 'uniqid'
+import { HiOutlineChevronRight } from "react-icons/hi"
 import DisplayEducation from "./displayEducation";
 
 class Education extends Component {
@@ -94,7 +95,11 @@ class Education extends Component {
 
         return(
             <div className="form-container-education">
-                <div className="form-title">{ formTitle }</div>
+                <div className="form-header-container">
+                    <div className="form-title">{ formTitle }</div>
+                    <div className="icon"><HiOutlineChevronRight /></div>
+
+                </div>
 
                 <form onSubmit={ this.onSubmitEducation }>
                     <input type="text" placeholder="University/College" name="university" id="uniInput" onChange={ this.handleChange } value={ education.university }></input>
