@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 :root {
     --primary-color: #121417;
@@ -19,6 +19,7 @@
     --spacing-medium: 56px;
     --spacing-small: 40px;
     --spacing-xsmall: 32px;
+    --spacing-xxsmall: 24px;
 
     --border-radius-thin: 4px;
 
@@ -44,6 +45,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 2px 2px rgb(211 210 210 / 50%);
 }
 
 .main {
@@ -93,6 +95,8 @@ form textarea {
     border: 2px solid var(--border-color);
     color: var(--text-color);
     font-size: var(--font-size-xsmall);
+    font-family: inherit;
+    resize: none;
 }
 
 input, textarea {
@@ -112,4 +116,51 @@ input, textarea {
     text-transform: uppercase;
     font-size: var(--font-size-xxxsmall);
     font-weight: 700;
+}
+
+/* style form button */
+button {
+    padding: 12px 16px;
+    font-size: var(--font-size-xsmall);
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    /* background-color: #191919; */
+    /* color: #fff; */
+    cursor: pointer;
+    width: 240px;
+}
+
+.btn-title {
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    color: #7b7c7e;
+    text-transform: uppercase;
+    font-size: var(--font-size-xxxsmall);
+    font-weight: 700;
+    margin-top: var(--spacing-xxsmall);
+}
+
+div.form-btns {
+    width: 500px;
+}
+
+button.clear-btn {
+    background-color: #fff;
+    border: 2px solid #f3a47e;
+    color: #EE7439;
+}
+
+button.delete-btn {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #EE7439;
+}
+
+button.save-btn {
+    margin-top: 16px;
+    width: inherit;
+    background-color: #EE7439;
+    color: #fff;
 }

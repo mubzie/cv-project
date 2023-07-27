@@ -24,6 +24,7 @@ class Education extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.onSubmitEducation = this.onSubmitEducation.bind(this)
         this.deleteEducation = this.deleteEducation.bind(this)
+        this.onClearButton = this.onClearButton.bind(this)
 
     }
 
@@ -57,6 +58,21 @@ class Education extends Component {
         })
 
         this.props.addEducation(this.state.education)
+
+    }
+
+    onClearButton() {
+        this.setState({
+            education: {
+                university: '',
+                degree: '',
+                startDate: '',
+                completionDate: '',
+                city: '',
+                country: '',
+                id: uniqid()
+            }
+        })
 
     }
 
@@ -114,9 +130,13 @@ class Education extends Component {
                 </form>
 
                 <div className="form-btns">
-                    <button className="delete-btn" id="save-btn" onClick={ this.onSubmitEducation } >save</button>
-                    <button className="delete-btn" id="del-btn" onClick={ this.deleteEducation } >delete</button>
-                    {/* <button className="add-new-btn" id="add-btn" onClick={ this.addEducation } >add new Education</button> */}
+                    <div className="btn-title">
+                        <button className="delete-btn" id="del-button" onClick={ this.deleteEducation } >Delete</button>
+                        <button className="clear-btn" id="clear-button" onClick={ this.onClearButton } >Cancel</button>
+
+                    </div>
+                    
+                    <button className="save-btn" id="save-button" onClick={ this.onSubmitEducation } >Save</button>
                 </div>
 
             </div>

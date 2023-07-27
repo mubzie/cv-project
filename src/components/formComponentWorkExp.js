@@ -25,6 +25,7 @@ class WorkExperience extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.onSubmitExperience = this.onSubmitExperience.bind(this)
         this.deleteWorkExperience = this.deleteWorkExperience.bind(this)
+        this.onClearButton = this.onClearButton.bind(this)
 
     }
 
@@ -59,6 +60,21 @@ class WorkExperience extends Component {
         })
         
         this.props.addWorkExperience(this.state.workExperience)
+    }
+
+    onClearButton() {
+        this.setState({
+            workExperience: {
+                company: '',
+                role: '',
+                startDate: '',
+                completionDate: '',
+                id: uniqid(),
+                city: '',
+                country: ''
+            }
+        })
+
     }
 
     deleteWorkExperience(e) {
@@ -115,9 +131,13 @@ class WorkExperience extends Component {
                 </form>
 
                 <div className="form-btns">
-                    <button className="save-btn" onClick={ this.onSubmitExperience }>save</button>
-                    <button className="delete-btn" onClick={ this.deleteWorkExperience }>delete</button>
-                    {/* <button className="add-new-btn" onClick={ this.addWorkExperience } >add new Experience</button> */}
+                    <div className="btn-title">
+                        <button className="delete-btn" onClick={ this.deleteWorkExperience }>Delete</button>
+                        <button className="clear-btn" onClick={ this.onClearButton } >Cancel</button>
+
+                    </div>
+
+                    <button className="save-btn" onClick={ this.onSubmitExperience }>Save</button>
                 </div>
 
             </div>

@@ -25,8 +25,8 @@ class PersonalDetails extends Component {
                 </form>
 
                 <div className="form-btns">
-                    <button className="save-btn" onClick={ saveButton }>save</button>
-                    <button className="delete-btn" onClick={ clearButton }>clear</button>
+                    {/* <button className="save-btn" onClick={ saveButton }>Save</button> */}
+                    {/* <button className="delete-btn" onClick={ clearButton }>clear</button> */}
                 </div>
 
             </div>
