@@ -62,6 +62,13 @@ body {
     gap: var(--spacing-medium);
 }
 
+.form-title {
+    padding: 8px;
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
 form {
     width: 500px;
     height: auto;
