@@ -16,7 +16,9 @@ class WorkExperience extends Component {
                 endDate: 'present',
                 id: uniqid(),
                 city: 'Silicon Valley',
-                country: 'USA'
+                country: 'USA',
+                profile: 'I was the lead Engineer on the android project'
+
             },
 
             workExperiences: []
@@ -72,7 +74,8 @@ class WorkExperience extends Component {
                 completionDate: '',
                 id: uniqid(),
                 city: '',
-                country: ''
+                country: '',
+                profile: ''
             }
         })
 
@@ -133,6 +136,9 @@ class WorkExperience extends Component {
                         </div>
 
                     </div>
+
+                    <textarea rows="3" cols="30" placeholder="write short description about your role in this company" name="profile" id="profileInput" onChange={ this.handleChange } value={ workExperience.profile }></textarea>
+
                 </form>
 
                 <div className="form-btns">

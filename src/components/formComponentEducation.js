@@ -17,6 +17,7 @@ class Education extends Component {
                 id: uniqid(),
                 city: 'Lagos',
                 country: 'Nigeria',
+                profile: "I volunteered on different SDG's programs during my time in the university"
             },
             educations: []
 
@@ -132,6 +133,9 @@ class Education extends Component {
                         </div>
 
                     </div>
+
+                    <textarea rows="3" cols="30" placeholder="things like relevant courses or extra-curricular activities" name="profile" id="profileInput" onChange={ this.handleChange } value={ education.profile }></textarea>
+
                 </form>
 
                 <div className="form-btns">

@@ -26,7 +26,7 @@ class PersonalDetails extends Component {
                     <input type="text" placeholder="Phone Number" name="phone" id="phoneInput" onChange={ handleChange } value={ personal.phone }></input>
                     <input type="text" placeholder="Email" name="email" id="emailInput" onChange={ handleChange } value={ personal.email }></input>
                     <input type="text" placeholder="State, Country" name="address" id="addressInput" onChange={ handleChange } value={ personal.address }></input>
-                    <textarea rows="5" cols="30" placeholder="write short information about yourself" name="profile" id="profileInput" onChange={ handleChange } value={ personal.profile }></textarea>
+                    <textarea rows="5" cols="30" maxlength="250" placeholder="write short information about yourself" name="profile" id="profileInput" onChange={ handleChange } value={ personal.profile }></textarea>
                 </form>
 
                 <div className="form-btns">

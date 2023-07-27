@@ -19,7 +19,7 @@ class App extends Component {
                 phone: '+2348154356599',
                 email: 'rabiumubarak92@gmail.com',
                 address: 'Lagos Nigeria',
-                profile: 'I am a software Engineer working for google'
+                profile: 'I am a software Engineer working for google in their HQ. This is an opportunity for me to showcase my skills and expertise in react'
             },
 
             workExperienceArr: [],
