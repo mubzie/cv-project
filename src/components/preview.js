@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Preview extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class Preview extends Component {
             <div className="name-role">
               <div className="personal-details name"> {personal.fullName} </div>
               <div className="personal-details occupation">
-                {' '}
-                {personal.occupation}{' '}
+                {" "}
+                {personal.occupation}{" "}
               </div>
             </div>
 
@@ -25,8 +25,8 @@ class Preview extends Component {
               <div className="personal-details phone"> {personal.phone} </div>
               <div className="personal-details email"> {personal.email} </div>
               <div className="personal-details address">
-                {' '}
-                {personal.address}{' '}
+                {" "}
+                {personal.address}{" "}
               </div>
             </div>
           </div>
@@ -44,12 +44,29 @@ class Preview extends Component {
                 id={workExperience.id}
                 key={workExperience.id}
               >
-                <div className="company"> {workExperience.company}</div>
-                <div className="role"> {workExperience.role}</div>
-                <div className="start-date"> {workExperience.startDate}</div>
-                <div className="end"> {workExperience.endDate}</div>
-                <div className="city"> {workExperience.city}</div>
-                <div className="country"> {workExperience.country}</div>
+                <div className="work-container">
+                  <div className="company-role-container">
+                    <div className="company"> {workExperience.company}</div>
+                    <div className="role"> {workExperience.role}</div>
+                  </div>
+                  <div className="date-location-container">
+                    <div className="date-container">
+                      <div className="start-date">
+                        {workExperience.startDate}
+                      </div>
+                      {" - "}
+                      <div className="end"> {workExperience.endDate}</div>
+                    </div>
+
+                    <div className="date-container">
+                      <div className="city">
+                        {workExperience.city}
+                        {","}
+                      </div>
+                      <div className="country"> {workExperience.country}</div>
+                    </div>
+                  </div>
+                </div>
                 <div className="profile"> {workExperience.profile}</div>
               </div>
             );
