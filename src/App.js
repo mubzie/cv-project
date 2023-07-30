@@ -107,22 +107,22 @@ class App extends Component {
               handleChange={this.handleChange}
               saveButton={this.onSubmitButton}
               clearButton={this.onClearButton}
-              isActive={ activeIndex === 0}
-              onShow={ () => this.setState({ activeIndex: 1})}
+              // isActive={ activeIndex === 0}
+              // onShow={ () => this.setState({ activeIndex: 1})}
             />
             <WorkExperience
               formTitle="Work Experience"
               addWorkExperience={this.addWorkExperience}
               deleteWorkExperience={this.deleteWorkExperience}
-              isActive={ activeIndex === 0}
-              onShow={ () => this.setState({ activeIndex: 0})}
+              // isActive={ activeIndex === 0}
+              // onShow={ () => this.setState({ activeIndex: 1})}
             />
             <Education
               formTitle="Education"
               addEducation={this.addEducation}
               deleteEducation={this.deleteEducation}
-              isActive={ activeIndex === 1}
-              onShow={ () => this.setState({ activeIndex: 1})}
+              // isActive={ activeIndex === 1}
+              // onShow={ () => this.setState({ activeIndex: 1})}
             />
           </div>
 
