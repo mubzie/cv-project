@@ -1,37 +1,45 @@
 /* eslint-disable no-useless-constructor */
-import React, { Component } from 'react';
-import { HiOutlineChevronRight } from 'react-icons/hi';
+import React, { Component } from "react";
+import { HiOutlineChevronRight } from "react-icons/hi";
+import { HiOutlineChevronDown } from "react-icons/hi";
 
 class PersonalDetails extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      showForm: false,
+    };
+
+    this.toggleForm = this.toggleForm.bind(this);
+  }
+
+  toggleForm() {
+    this.setState({ showForm: !this.state.showForm });
   }
 
   render() {
-    const { formTitle, personal, handleChange, saveButton, clearButton, isActive } =
-      this.props;
+    const { showForm } = this.state;
+    const {
+      formTitle,
+      personal,
+      handleChange,
+      saveButton,
+      clearButton,
+      isActive,
+    } = this.props;
 
     return (
       <div className="form-container-personal">
-        {isActive ? (
-
-          <div className="form-header-container">
-            <div className="form-title">{formTitle}</div>
-            <div onClick={this.props.onShow} className="icon">
-              <HiOutlineChevronRight />
-            </div>
+        <div className="form-header-container">
+          <div className="form-title">{formTitle}</div>
+          <div onClick={this.toggleForm} className="icon">
+            {showForm ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
           </div>
+        </div>
 
-        ) : (
-
+        {showForm && (
           <>
-            <div className="form-header-container">
-              <div className="form-title">{formTitle}</div>
-              <div className="icon">
-                <HiOutlineChevronRight />
-              </div>
-            </div>
-
             <form>
               <input
                 type="text"
@@ -90,7 +98,6 @@ class PersonalDetails extends Component {
               {/* <button className="delete-btn" onClick={ clearButton }>clear</button> */}
             </div>
           </>
-
         )}
       </div>
     );

@@ -30,19 +30,19 @@ class WorkExperience extends Component {
     this.onSubmitExperience = this.onSubmitExperience.bind(this);
     this.deleteWorkExperience = this.deleteWorkExperience.bind(this);
     this.onClearButton = this.onClearButton.bind(this);
-    this.toggleForm = this.toggleForm.bind(this)
-    }
+    this.toggleForm = this.toggleForm.bind(this);
+  }
 
   checkArrayLength() {
-    if(this.state.workExperiences.length === 0) {
-      return true  
+    if (this.state.workExperiences.length === 0) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
   toggleForm() {
-    this.setState({ showForm: !this.state.showForm})
+    this.setState({ showForm: !this.state.showForm });
   }
 
   handleChange(e) {
@@ -108,138 +108,114 @@ class WorkExperience extends Component {
     const { formTitle } = this.props;
 
     return (
-      
       <div className="form-container-workexp">
-        
         <div className="form-header-container">
           <div className="form-title">{formTitle}</div>
           <div onClick={this.toggleForm} className="icon">
-          {showForm ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
+            {showForm ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
           </div>
         </div>
 
         {showForm && (
-          // <div className="form-header-container">
-          //   <div className="form-title">{formTitle}</div>
-          //   <div onClick={this.handleOpenForm} className="icon">
-          //     {showForm ? 'Close Form' : 'Open Form'}
-          //   {/* <div onClick={this.props.onShow} className="icon"> */}
-          //     <HiOutlineChevronRight />
-          //   </div>
-          // </div>
+          <>
+            <form onSubmit={this.onSubmitExperience}>
+              <input
+                type="text"
+                placeholder="Company"
+                name="company"
+                id="nameInput"
+                onChange={this.handleChange}
+                value={workExperience.company}
+              ></input>
+              <input
+                type="text"
+                placeholder="Role"
+                name="role"
+                id="occupationInput"
+                onChange={this.handleChange}
+                value={workExperience.role}
+              ></input>
 
-            <>
-              {/* <div className="form-header-container">
-                  <div className="form-title">{formTitle}</div>
-                  <div onClick={this.props.onShow} className="icon">
-                  <HiOutlineChevronRight />
-                  </div>
-              </div> */}
-              
-              <form onSubmit={this.onSubmitExperience}>
-                <input
-                  type="text"
-                  placeholder="Company"
-                  name="company"
-                  id="nameInput"
-                  onChange={this.handleChange}
-                  value={workExperience.company}
-                ></input>
-                <input
-                  type="text"
-                  placeholder="Role"
-                  name="role"
-                  id="occupationInput"
-                  onChange={this.handleChange}
-                  value={workExperience.role}
-                ></input>
-
-                <div className="info-container">
-                  <div className="info-title">
-                    <label htmlFor="startDateInput">start Date</label>
-                    <input
-                      type="text"
-                      placeholder="Start Date"
-                      name="startDate"
-                      id="startDateInput"
-                      onChange={this.handleChange}
-                      value={workExperience.startDate}
-                    ></input>
-                  </div>
-                  <div className="info-title">
-                    <label htmlFor="endDateInput">end Date</label>
-                    <input
-                      type="text"
-                      placeholder="End Date"
-                      name="endDate"
-                      id="endDateInput"
-                      onChange={this.handleChange}
-                      value={workExperience.endDate}
-                    ></input>
-                  </div>
+              <div className="info-container">
+                <div className="info-title">
+                  <label htmlFor="startDateInput">start Date</label>
+                  <input
+                    type="text"
+                    placeholder="Start Date"
+                    name="startDate"
+                    id="startDateInput"
+                    onChange={this.handleChange}
+                    value={workExperience.startDate}
+                  ></input>
                 </div>
-
-                <div className="info-container">
-                  <div className="info-title">
-                    <label htmlFor="startDateInput">city</label>
-                    <input
-                      type="text"
-                      placeholder="city"
-                      name="city"
-                      id="cityInput"
-                      onChange={this.handleChange}
-                      value={workExperience.city}
-                    ></input>
-                  </div>
-                  <div className="info-title">
-                    <label htmlFor="endDateInput">country</label>
-                    <input
-                      type="text"
-                      placeholder="country"
-                      name="country"
-                      id="countryInput"
-                      onChange={this.handleChange}
-                      value={workExperience.country}
-                    ></input>
-                  </div>
+                <div className="info-title">
+                  <label htmlFor="endDateInput">end Date</label>
+                  <input
+                    type="text"
+                    placeholder="End Date"
+                    name="endDate"
+                    id="endDateInput"
+                    onChange={this.handleChange}
+                    value={workExperience.endDate}
+                  ></input>
                 </div>
+              </div>
 
-                <textarea
-                  rows="3"
-                  cols="30"
-                  placeholder="write short description about your role in this company"
-                  name="profile"
-                  id="profileInput"
-                  onChange={this.handleChange}
-                  value={workExperience.profile}
-                ></textarea>
-              </form>
-
-              <div className="form-btns">
-                <div className="btn-title">
-                  <button
-                    className="delete-btn"
-                    onClick={this.deleteWorkExperience}
-                  >
-                    Delete
-                  </button>
-                  <button className="clear-btn" onClick={this.onClearButton}>
-                    Cancel
-                  </button>
+              <div className="info-container">
+                <div className="info-title">
+                  <label htmlFor="startDateInput">city</label>
+                  <input
+                    type="text"
+                    placeholder="city"
+                    name="city"
+                    id="cityInput"
+                    onChange={this.handleChange}
+                    value={workExperience.city}
+                  ></input>
                 </div>
+                <div className="info-title">
+                  <label htmlFor="endDateInput">country</label>
+                  <input
+                    type="text"
+                    placeholder="country"
+                    name="country"
+                    id="countryInput"
+                    onChange={this.handleChange}
+                    value={workExperience.country}
+                  ></input>
+                </div>
+              </div>
 
-                <button className="save-btn" onClick={this.onSubmitExperience}>
-                  Save
+              <textarea
+                rows="3"
+                cols="30"
+                placeholder="write short description about your role in this company"
+                name="profile"
+                id="profileInput"
+                onChange={this.handleChange}
+                value={workExperience.profile}
+              ></textarea>
+            </form>
+
+            <div className="form-btns">
+              <div className="btn-title">
+                <button
+                  className="delete-btn"
+                  onClick={this.deleteWorkExperience}
+                >
+                  Delete
+                </button>
+                <button className="clear-btn" onClick={this.onClearButton}>
+                  Cancel
                 </button>
               </div>
-            
-            </>
-          )}
 
-
-
-        
-        
+              <button className="save-btn" onClick={this.onSubmitExperience}>
+                Save
+              </button>
+            </div>
+          </>
+        )}
       </div>
     );
   }

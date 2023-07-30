@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
 import { HiOutlineChevronRight } from "react-icons/hi";
+import { HiOutlineChevronDown } from "react-icons/hi";
 import DisplayEducation from "./displayEducation";
 
 class Education extends Component {
@@ -20,6 +21,9 @@ class Education extends Component {
         profile:
           "I volunteered on different SDG's programs during my time in the university",
       },
+
+      showForm: false,
+
       educations: [],
     };
 
@@ -27,6 +31,11 @@ class Education extends Component {
     this.onSubmitEducation = this.onSubmitEducation.bind(this);
     this.deleteEducation = this.deleteEducation.bind(this);
     this.onClearButton = this.onClearButton.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
+  }
+
+  toggleForm() {
+    this.setState({ showForm: !this.state.showForm });
   }
 
   handleChange(e) {
@@ -85,27 +94,20 @@ class Education extends Component {
   }
 
   render() {
-    const { education } = this.state;
-    const { formTitle, isActive } = this.props;
+    const { education, showForm } = this.state;
+    const { formTitle } = this.props;
 
     return (
       <div className="form-container-education">
-        {isActive ? (
-          <div className="form-header-container">
-            <div className="form-title">{formTitle}</div>
-            <div onClick={this.props.onShow} className="icon">
-              <HiOutlineChevronRight />
-            </div>
+        <div className="form-header-container">
+          <div className="form-title">{formTitle}</div>
+          <div onClick={this.toggleForm} className="icon">
+            {showForm ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
           </div>
-        ) : (
+        </div>
+
+        {showForm && (
           <>
-            <div className="form-header-container">
-                <div className="form-title">{formTitle}</div>
-                <div onClick={this.props.onShow} className="icon">
-                <HiOutlineChevronRight />
-                </div>
-            </div>
-            
             <form onSubmit={this.onSubmitEducation}>
               <input
                 type="text"
