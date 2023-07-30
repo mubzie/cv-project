@@ -1,11 +1,11 @@
 /* eslint-disable no-useless-constructor */
-import React, { Component } from 'react';
-import Navbar from './components/navbar';
-import PersonalDetails from './components/formComponentPersonal';
-import WorkExperience from './components/formComponentWorkExp';
-import Education from './components/formComponentEducation';
-import Preview from './components/preview';
-import './styles/App.css';
+import React, { Component } from "react";
+import Navbar from "./components/navbar";
+import PersonalDetails from "./components/formComponentPersonal";
+import WorkExperience from "./components/formComponentWorkExp";
+import Education from "./components/formComponentEducation";
+import Preview from "./components/preview";
+import "./styles/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -13,13 +13,13 @@ class App extends Component {
 
     this.state = {
       personal: {
-        fullName: 'Mubarak Rabiu',
-        occupation: 'Software Engineer',
-        phone: '+2348154356599',
-        email: 'rabiumubarak92@gmail.com',
-        address: 'Lagos Nigeria',
+        fullName: "Mubarak Rabiu",
+        occupation: "Software Engineer",
+        phone: "+2348154356599",
+        email: "rabiumubarak92@gmail.com",
+        address: "Lagos Nigeria",
         profile:
-          'I am a software Engineer working for google in their HQ. This is an opportunity for me to showcase my skills and expertise in react',
+          "I am a software Engineer working for google in their HQ. This is an opportunity for me to showcase my skills and expertise in react",
       },
 
       workExperienceArr: [],
@@ -54,12 +54,12 @@ class App extends Component {
   onClearButton() {
     this.setState({
       personal: {
-        fullName: '',
-        occupation: '',
-        phone: '',
-        email: '',
-        address: '',
-        profile: '',
+        fullName: "",
+        occupation: "",
+        phone: "",
+        email: "",
+        address: "",
+        profile: "",
       },
     });
   }

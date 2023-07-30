@@ -20,14 +20,7 @@ class PersonalDetails extends Component {
 
   render() {
     const { showForm } = this.state;
-    const {
-      formTitle,
-      personal,
-      handleChange,
-      saveButton,
-      clearButton,
-      isActive,
-    } = this.props;
+    const { formTitle, personal, handleChange } = this.props;
 
     return (
       <div className="form-container-personal">

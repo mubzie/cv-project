@@ -65,7 +65,7 @@ body {
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-xxsmall);
 }
 
 .form-container-personal, .form-container-workexp, .form-container-education {
@@ -81,8 +81,8 @@ body {
   padding: 8px;
   font-size: var(--font-size-small);
   font-weight: 500;
-  margin-bottom: 16px;
   cursor: pointer;
+  width: 400px;
 }
 
 div.icon {
