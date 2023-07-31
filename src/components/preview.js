@@ -7,7 +7,13 @@ class Preview extends Component {
   }
 
   render() {
-    const { personal, workExperienceArr, educationArr } = this.props;
+    const {
+      personal,
+      workExperienceArr,
+      educationArr,
+      workHeader,
+      educationHeader,
+    } = this.props;
 
     return (
       <div>
@@ -37,6 +43,10 @@ class Preview extends Component {
         <hr></hr>
 
         <div className="container-work-experience">
+          <div className="container-header">{workHeader}</div>
+
+          <hr></hr>
+
           {workExperienceArr.map((workExperience) => {
             return (
               <div
@@ -63,7 +73,11 @@ class Preview extends Component {
                         {workExperience.city}
                         {","}
                       </div>
-                      <div className="country"> {workExperience.country}</div>
+                      <div className="country">
+                        {" "}
+                        {workExperience.country}
+                        {"."}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -74,15 +88,40 @@ class Preview extends Component {
         </div>
 
         <div className="container-education">
+          <div className="container-header">{educationHeader}</div>
+
+          <hr></hr>
+
           {educationArr.map((education) => {
             return (
               <div className="education" id={education.id} key={education.id}>
-                <div className="university"> {education.university}</div>
-                <div className="degree"> {education.degree}</div>
-                <div className="start-date"> {education.startDate}</div>
-                <div className="end"> {education.endDate}</div>
-                <div className="city"> {education.city}</div>
-                <div className="country"> {education.country}</div>
+                <div className="edu-container">
+                  <div className="uni-degree-container">
+                    <div className="university"> {education.university}</div>
+                    <div className="degree"> {education.degree}</div>
+                  </div>
+                  <div className="date-location-container">
+                    <div className="date-container">
+                      <div className="start-date"> {education.startDate}</div>
+                      {" - "}
+                      <div className="end"> {education.completionDate}</div>
+                    </div>
+
+                    <div className="date-container">
+                      <div className="city">
+                        {" "}
+                        {education.city}
+                        {","}
+                      </div>
+                      <div className="country">
+                        {" "}
+                        {education.country}
+                        {"."}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="profile"> {education.profile}</div>
               </div>
             );

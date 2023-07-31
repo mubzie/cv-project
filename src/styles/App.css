@@ -68,10 +68,12 @@ body {
   gap: var(--spacing-xxsmall);
 }
 
-.form-container-personal, .form-container-workexp, .form-container-education {
-  background: #FFF;
+.form-container-personal,
+.form-container-workexp,
+.form-container-education {
+  background: #fff;
   padding: 8px;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 .form-header-container {
@@ -111,7 +113,7 @@ form input {
   width: inherit;
   border-radius: 6px;
   border: 2px solid var(--border-color);
-  color: var(--text-color);
+  /* color: var(--text-color); */
   font-size: var(--font-size-xsmall);
 }
 
@@ -211,6 +213,12 @@ button.save-btn {
   margin-bottom: 16px;
 }
 
+.container-header {
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
 .child-container {
   display: flex;
   justify-content: space-between;
@@ -246,7 +254,8 @@ button.save-btn {
   color: var(--sec-font-color);
 }
 
-.personal-details.profile {
+.personal-details.profile,
+.profile {
   font-size: var(--font-size-xsmall);
   color: var(--sec-font-color);
   line-height: 1.5;
@@ -257,22 +266,37 @@ hr {
   margin-bottom: 24px;
 }
 
-.work-experience {
+.container-work-experience {
+  margin-bottom: var(--spacing-small);
+}
+
+.work-experience,
+.education {
   margin-bottom: 24px;
 }
 
-.work-container {
+.work-container,
+.edu-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  font-size: var(--font-size-xsmall);
+  font-weight: 500;
+}
+
+.company,
+.university {
+  font-size: var(--font-size-small);
 }
 
 .date-container {
   display: flex;
+  justify-content: flex-end;
   gap: 8px;
 }
 
-.company-role-container {
+.company-role-container,
+.uni-degree-container {
   display: flex;
   flex-direction: column;
   gap: 8px;

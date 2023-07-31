@@ -123,6 +123,8 @@ class App extends Component {
               personal={personal}
               workExperienceArr={workExperienceArr}
               educationArr={educationArr}
+              workHeader="Work Experience"
+              educationHeader="Education"
             />
           </div>
         </div>

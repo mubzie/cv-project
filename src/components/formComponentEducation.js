@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { HiOutlineChevronDown } from "react-icons/hi";
-import DisplayEducation from "./displayEducation";
+// import DisplayEducation from "./displayEducation";
 
 class Education extends Component {
   constructor(props) {
@@ -62,6 +62,8 @@ class Education extends Component {
         id: uniqid(),
         city: "Lagos",
         country: "Nigeria",
+        profile:
+          "I volunteered on different SDG's programs during my time in the university",
       },
     });
 
