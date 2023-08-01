@@ -85,6 +85,11 @@ body {
   font-weight: 500;
   cursor: pointer;
   width: 400px;
+  /* margin-bottom: 8px; */
+}
+
+.work-exp-list {
+  margin-top: 8px;
 }
 
 div.icon {
@@ -162,6 +167,14 @@ button {
   /* color: #fff; */
   cursor: pointer;
   width: 190px;
+}
+
+button.add-new-button {
+  font-size: var(--font-size-xsmall);
+  font-weight: 500;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
 }
 
 .btn-title {

@@ -148,10 +148,10 @@ class WorkExperience extends Component {
         {showForm && (
           <>
             {this.state.workExperiences.length === 0 && (
-              <div>
-                <div>
+              <div className="work-exp-list">
+                {/* <div>
                   this array is empty {this.state.workExperiences.length}
-                </div>
+                </div> */}
                 <button className="add-new-button" onClick={this.displayForm}>
                   {" "}
                   Add work experience{" "}
