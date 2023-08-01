@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { HiOutlineChevronDown } from "react-icons/hi";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 // import DisplayWorkExp from "./displayWorkExp";
 
 class WorkExperience extends Component {
@@ -26,21 +27,9 @@ class WorkExperience extends Component {
 
       showForm: false,
 
-      showForm2: false,
+      displayForm: false,
 
-      workExperiences: [
-        // {
-        //   company: "Google",
-        //   role: "Software Engineer",
-        //   startDate: "07/2022",
-        //   endDate: "present",
-        //   id: uniqid(),
-        //   city: "Silicon Valley",
-        //   country: "USA",
-        //   profile:
-        //     "I was the lead Engineer on the android project. Leading a team of 100 software engineers thought-out the entire project lifecylce",
-        // },
-      ],
+      workExperiences: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -56,7 +45,7 @@ class WorkExperience extends Component {
     this.setState({
       dropDown: !this.state.dropDown,
       showForm: !this.state.showForm,
-      showForm2: false,
+      displayForm: false,
     });
   }
 
@@ -66,7 +55,7 @@ class WorkExperience extends Component {
 
   displayForm() {
     this.setState({
-      showForm2: true,
+      displayForm: true,
       showForm: false,
       dropDown: !this.state.dropDown,
     });
@@ -133,7 +122,8 @@ class WorkExperience extends Component {
   }
 
   render() {
-    const { workExperience, dropDown, showForm, showForm2 } = this.state;
+    const { workExperience, dropDown, showForm, displayForm, workExperiences } =
+      this.state;
     const { formTitle } = this.props;
 
     return (
@@ -147,21 +137,45 @@ class WorkExperience extends Component {
 
         {showForm && (
           <>
-            {this.state.workExperiences.length === 0 && (
+            {this.state.workExperiences.length === 0 ? (
               <div className="work-exp-list">
-                {/* <div>
-                  this array is empty {this.state.workExperiences.length}
-                </div> */}
                 <button className="add-new-button" onClick={this.displayForm}>
                   {" "}
                   Add work experience{" "}
                 </button>
               </div>
+            ) : (
+              <>
+                {workExperiences.map((workExperience) => {
+                  return (
+                    <>
+                      <div className="work-exp-arr" key={workExperience.id}>
+                        {/* this array is not empty{" "}
+                        {this.state.workExperiences.length} */}
+                        <div className="co-ro-list">
+                          <div className="company-arr">
+                            {workExperience.company}
+                          </div>
+                          <div className="role-arr">{workExperience.role}</div>
+                        </div>
+                        <div className="edit-btn">
+                          {" "}
+                          <HiOutlinePencilAlt />{" "}
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+                <button className="add-new-button" onClick={this.displayForm}>
+                  {" "}
+                  Add work experience{" "}
+                </button>
+              </>
             )}
           </>
         )}
 
-        {showForm2 && (
+        {displayForm && (
           <>
             <form onSubmit={this.onSubmitExperience}>
               <input

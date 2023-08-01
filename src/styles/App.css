@@ -92,6 +92,13 @@ body {
   margin-top: 8px;
 }
 
+.work-exp-arr {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
 div.icon {
   display: flex;
   align-items: center;
