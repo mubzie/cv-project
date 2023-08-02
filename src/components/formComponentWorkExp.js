@@ -93,6 +93,12 @@ class WorkExperience extends Component {
     });
 
     this.props.addWorkExperience(this.state.workExperience);
+
+    this.setState({
+      dropDown: !this.state.dropDown,
+      showForm: !this.state.showForm,
+      displayForm: false,
+    });
   }
 
   onClearButton() {
@@ -101,7 +107,7 @@ class WorkExperience extends Component {
         company: "",
         role: "",
         startDate: "",
-        completionDate: "",
+        endDate: "",
         id: uniqid(),
         city: "",
         country: "",
@@ -128,9 +134,9 @@ class WorkExperience extends Component {
 
     return (
       <div className="form-container-workexp">
-        <div className="form-header-container">
+        <div className="form-header-container" onClick={this.toggleDropDown}>
           <div className="form-title">{formTitle}</div>
-          <div onClick={this.toggleDropDown} className="icon">
+          <div className="icon">
             {dropDown ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
           </div>
         </div>
@@ -139,9 +145,11 @@ class WorkExperience extends Component {
           <>
             {this.state.workExperiences.length === 0 ? (
               <div className="work-exp-list">
+                <div className="work-exp-info">
+                  You haven't add any work experience
+                </div>
                 <button className="add-new-button" onClick={this.displayForm}>
-                  {" "}
-                  Add work experience{" "}
+                  Add work experience
                 </button>
               </div>
             ) : (
@@ -150,8 +158,6 @@ class WorkExperience extends Component {
                   return (
                     <>
                       <div className="work-exp-arr" key={workExperience.id}>
-                        {/* this array is not empty{" "}
-                        {this.state.workExperiences.length} */}
                         <div className="co-ro-list">
                           <div className="company-arr">
                             {workExperience.company}
