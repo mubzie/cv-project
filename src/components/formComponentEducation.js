@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { HiOutlineChevronDown } from "react-icons/hi";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 // import DisplayEducation from "./displayEducation";
 
 class Education extends Component {
@@ -22,7 +23,11 @@ class Education extends Component {
           "I volunteered on different SDG's programs during my time in the university",
       },
 
+      dropDown: false,
+
       showForm: false,
+
+      displayForm: false,
 
       educations: [],
     };
@@ -31,11 +36,28 @@ class Education extends Component {
     this.onSubmitEducation = this.onSubmitEducation.bind(this);
     this.deleteEducation = this.deleteEducation.bind(this);
     this.onClearButton = this.onClearButton.bind(this);
-    this.toggleForm = this.toggleForm.bind(this);
+    this.toggleDropDown = this.toggleDropDown.bind(this);
+    this.displayForm = this.displayForm.bind(this);
   }
 
-  toggleForm() {
-    this.setState({ showForm: !this.state.showForm });
+  toggleDropDown() {
+    this.setState({
+      dropDown: !this.state.dropDown,
+      showForm: !this.state.showForm,
+      displayForm: false,
+    });
+  }
+
+  // toggleForm() {
+  //   this.setState({ showForm: !this.state.showForm });
+  // }
+
+  displayForm() {
+    this.setState({
+      displayForm: true,
+      showForm: false,
+      dropDown: !this.state.dropDown,
+    });
   }
 
   handleChange(e) {
@@ -68,6 +90,12 @@ class Education extends Component {
     });
 
     this.props.addEducation(this.state.education);
+
+    this.setState({
+      dropDown: !this.state.dropDown,
+      showForm: !this.state.showForm,
+      displayForm: false,
+    });
   }
 
   onClearButton() {
@@ -96,19 +124,60 @@ class Education extends Component {
   }
 
   render() {
-    const { education, showForm } = this.state;
+    const { education, dropDown, showForm, displayForm, educations } =
+      this.state;
     const { formTitle } = this.props;
 
     return (
       <div className="form-container-education">
-        <div className="form-header-container">
+        <div className="form-header-container" onClick={this.toggleDropDown}>
           <div className="form-title">{formTitle}</div>
-          <div onClick={this.toggleForm} className="icon">
-            {showForm ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
+          <div className="icon">
+            {dropDown ? <HiOutlineChevronDown /> : <HiOutlineChevronRight />}
           </div>
         </div>
 
         {showForm && (
+          <>
+            {this.state.educations.length === 0 ? (
+              <div className="work-exp-list">
+                <div className="work-exp-info">
+                  You haven't add any education
+                </div>
+                <button className="add-new-button" onClick={this.displayForm}>
+                  Add education
+                </button>
+              </div>
+            ) : (
+              <>
+                {educations.map((education) => {
+                  return (
+                    <>
+                      <div className="work-exp-arr" key={education.id}>
+                        <div className="co-ro-list">
+                          <div className="company-arr">
+                            {education.university}
+                          </div>
+                          <div className="role-arr">{education.degree}</div>
+                        </div>
+                        <div className="edit-btn">
+                          {" "}
+                          <HiOutlinePencilAlt />{" "}
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+                <button className="add-new-button" onClick={this.displayForm}>
+                  {" "}
+                  Add education{" "}
+                </button>
+              </>
+            )}
+          </>
+        )}
+
+        {displayForm && (
           <>
             <form onSubmit={this.onSubmitEducation}>
               <input
