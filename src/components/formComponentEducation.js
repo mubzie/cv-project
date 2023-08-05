@@ -142,7 +142,7 @@ class Education extends Component {
             {this.state.educations.length === 0 ? (
               <div className="work-exp-list">
                 <div className="work-exp-info">
-                  You haven't add any education
+                  You haven't added any education
                 </div>
                 <button className="add-new-button" onClick={this.displayForm}>
                   Add education
@@ -170,7 +170,7 @@ class Education extends Component {
                 })}
                 <button className="add-new-button" onClick={this.displayForm}>
                   {" "}
-                  Add education{" "}
+                  Add new education{" "}
                 </button>
               </>
             )}

@@ -146,7 +146,7 @@ class WorkExperience extends Component {
             {this.state.workExperiences.length === 0 ? (
               <div className="work-exp-list">
                 <div className="work-exp-info">
-                  You haven't add any work experience
+                  You haven't added any work experience
                 </div>
                 <button className="add-new-button" onClick={this.displayForm}>
                   Add work experience
@@ -174,7 +174,7 @@ class WorkExperience extends Component {
                 })}
                 <button className="add-new-button" onClick={this.displayForm}>
                   {" "}
-                  Add work experience{" "}
+                  Add new work experience{" "}
                 </button>
               </>
             )}
